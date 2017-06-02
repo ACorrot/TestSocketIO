@@ -9,13 +9,15 @@
 </head>
 <body>
     <div style="margin-left: 50%">
-        <label for="name">Insert your name</label>
-        <input type="text" id="name" name="name">
+        <label for="userName">Insert your name</label>
+        <input type="text" id="userName" name="userName" required  >
         <button id="submit" type="submit">Ok</button>
         <script>
           $( document ).ready(function() {
             $('#submit').on('click', function(){
-                console.log(document.getElementById('name').value);
+                localStorage.setItem('winPlayer1', document.getElementById('userName').value);
+                console.log(document.getElementById('userName').value);
+                //window.location.href = "/";
             });
           });
         </script>

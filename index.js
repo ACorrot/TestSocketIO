@@ -10,14 +10,14 @@ app.get('/inscription', function(req, res){
   res.sendFile(__dirname + '/inscription.html');
 });
 
-userName = "Test";
+test = localStorage.setItem('winPlayer1', document.getElementById('userName').value);
 userConnected = "New user connected";
 userDisconnected = "User disconnected";
 
 io.on('connection', function(socket){
     io.emit('chat message', userConnected);
   socket.on('chat message', function(message){
-    io.emit('chat message', userName + " : " + message);
+    io.emit('chat message',test + " : " + message);
   });
    socket.on('disconnect', function () {
     io.emit('chat message', userDisconnected);
