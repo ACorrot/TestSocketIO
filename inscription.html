@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+</head>
+<body>
+    <div style="margin-left: 50%">
+        <label for="name">Insert your name</label>
+        <input type="text" id="name" name="name">
+        <button id="submit" type="submit">Ok</button>
+        <script>
+          $( document ).ready(function() {
+            $('#submit').on('click', function(){
+                console.log(document.getElementById('name').value);
+            });
+          });
+        </script>
+    </div>
+     <script src="/socket.io/socket.io.js"></script>
+</body>
+</html>
